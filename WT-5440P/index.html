@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>NEFA - Cryptocurrency Web App</title>
+    <style>
+
+            .header{
+        height: 70vh;
+        background: rgb(216,230,254);
+        background: linear-gradient(4deg, rgba(216,230,254,1) 13%, rgba(255,255,255,1) 62%);
+      }    
+      .p1{
+          font-size: 12px;
+          font-weight: 500;
+          background: -webkit-linear-gradient(#468EF9, #0C66EE);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+      .p2{
+          font-size: 35px;            
+          font-weight: 700;
+  
+      }
+      .p3{
+          font-size: 35px;
+          font-weight: 700;
+          background: -webkit-linear-gradient(#12d0ff, #2692f4);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+      }
+      .p4{
+          font-size: 12px;
+          color: #8a8b8c;
+      }
+
+      .destek{
+      padding: 200px;
+    }
+    .destekler{
+     margin-left: 100px;
+     margin-right: 100px;
+    }
+    .ok1,.ok2{
+      display: none;
+    }
+            @media screen and (min-width: 1400px){
+                .credistr{
+                    margin-left: 250px;margin-top: -150px;
+                }
+                .inputselectimage{
+                    margin-left: 200px;
+                }
+                .tools{
+                    margin-left: 150px;
+                }
+                .toolsimage{
+                    margin-left: 100px;
+                    padding-left: 100px;
+                }
+                .ok1{
+                  display: block;
+                  width: 150px;
+                  position: relative;
+                  top: 230px;
+                  left: 350px;
+                }
+                .ok2{
+                  display: block;
+                  width: 150px;
+                  position: relative;
+                  top: 230px;
+                  left: 800px;
+                }
+
+            }
+            @media screen and (max-width: 1400px){
+                .credistr{
+                    margin-top: -300px;
+                }
+                .tools{
+                    margin-left: 240px;
+                }
+                .toolsimage{
+                    margin-left: 50px;
+                    padding-left: 100px;
+                }
+
+            }
+            @media screen and (max-width: 1400px) and (min-width: 1200px) {
+                .credistr{
+                    padding-left: 400px;
+                }
+                .gambio{
+                    margin-left: 100px;
+                }
+                .toolsimage{
+                    margin-left: 200px;
+                }
+                .ok1{
+                  width: 150px;
+                  display: block;
+                  position: relative;
+                  top: 230px;
+                  left: 450px;
+                }
+
+            }
+
+            @media screen and (max-width: 1200px) and (min-width: 992px) {
+                .credistr{
+                    padding-left: 300px;
+                }
+
+            }
+            @media screen and (max-width: 1200px)  {
+                    .resim,.yildiz,.bosluk {
+                    display: none;
+                    }
+                    .yazi{
+                    margin-top: 100px;
+                    justify-content: center;
+                    text-align: center;
+                    }
+            }
+            
+            @media screen and (max-width: 992px) and (min-width: 768px) {
+
+                .clever{
+                        padding-left: 100px;
+                }
+                .diomand{
+                    padding-left: 90px;
+                }
+                .swiss{
+                    padding-left: 90px;
+                }
+                .gambio{
+                    padding-left: 90px;
+                }
+                .credistr{
+                    padding-left: 200px;
+                }
+
+                .toolsimage{
+                    margin-left: -180px;
+                }
+            }
+            @media screen and (max-width: 768px) and (min-width: 576px) {
+                .credistr{
+                    padding-left: 50px;
+                }
+                .destek{
+                      padding: 0px;
+                    padding-top: 30px;
+                    }
+                    .destekler{
+                      margin-left: 0px;
+                      margin-right: 0px;
+                      }
+            }
+            @media screen and (max-width: 576px){
+                .credistr{
+                    padding-left: 0px;
+                }
+                .destek{
+                  padding: 0px;
+                
+                }
+                .destekler{
+                  margin-right: 0px;margin-left: 0px;
+                }
+            }
+            @media screen and (max-width: 373px) {
+             .btn1{
+              margin-bottom: 20px;
+      }}
+      @media screen and (min-width:409px){
+        .inputselectimage{
+        height: 400px;width: 500px;
+    }
+      }
+      @media screen and (max-width: 409px) {
+    .inputselectimage{
+        height: 300px;width: 300px;
+    }
+    }
+    .learnmore:hover{
+        cursor: pointer;
+    }
+
+
+    </style>
+</head>
+<body onload="loadform()">
+    
+    <nav style="background-color: white !important; " class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img height="50px" src="images/navbar.png"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Cryptocurrency</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Exchanges</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Watchlist</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">NFT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Portfolio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Products
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Products</a></li>
+                  <li><a class="dropdown-item" href="#">Products1</a></li>
+                  <li><a class="dropdown-item" href="#">Products3</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <button type="button" style="margin-right: 10px;width: 120px; border-radius: 30px;" class="btn btn-outline-primary">Log In</button>
+              <button type="button" style="width: 120px;border-radius: 30px;" class="btn btn-primary">Sign Up</button>
+            </form>
+          </div>
+        </div>
+    </nav>
+    <div class="container-fluid header d-flex justify-content-center">
+        <div class="row justify-content-center align-items-center">
+          <div class="col yazi  align-self-center" > 
+            <img class="yildiz" style="height: 50px;position: relative;left: 190px;" src="images/yidiz.png">
+            <p class="p1">
+              SIGN UP TODAY
+          </p>
+          <p class="p2" style="margin-bottom: -10px ;">
+              The World’s
+          </p>
+          <p  class="p3" style="margin-bottom: -10px ;">
+              Fastest Growing 
+          </p>
+          <p class="p2">
+              Crypto Web App
+          </p>      
+          <p class="p4" style="margin-bottom: -3px ;">
+              Buy and sell 200+ cryptocurrencies with 20+ flat currencies using
+          </p>
+          <p class="p4">
+              bank transfers or your credit/debit card.
+          </p>
+          <div class=" d-sm-inline-flex justify-content-center">
+          <button type="button" style="width: 170px;height: 50px ;border-radius: 30px;margin-right: 5px;" class="btn btn-primary btn1">Get Started </button>
+          <button type="button" style="width: 170px; height: 50px;border-radius: 30px;" class="btn btn-outline-primary">Download App ↓</button>
+          <img class="yildiz" style="height: 50px;position: relative;left: 19px; " src="images/kare.png">
+        </div>
+          
+          </div>
+          <div class="col resim" >
+            <img src="images/header.png" style="height: 550px;width: 750px;" class="img-fluid">
+          </div>
+        </div>
+    </div>
+    <div class="mytable" style="margin-top: -20px;">
+        <div class="container ">
+        <div class="row justify-content-center align-items-center" style="background-color: white; box-shadow: 3px 3px 3px 3px #8a8b8c;padding: 20px; border-radius: 20px;">
+            <div class="col-xxl-4 col-xl-6 col-lg-12 columnone" style="width: 400px; overflow: hidden; ">
+                <div class="d-flex" style="position: relative;">
+                  <p class="emojiyazi" class="h7">🔥 Trending</p> 
+                  <p style="position: absolute;color: #2F7CF0;font-size: smaller;padding-top: 10px; right: 0px;" >More ></p>
+                </div>
+                <table class="table" >
+                  <thead>
+                    <tr>
+                        <th >Name</th>
+                        <th class="price" >Price</th>
+                        <th class="chart">Chart</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                        <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/bitcoin.png"> &nbsp;Bitcoin</div></td>
+                        <td style="padding-top: 20px;"><div class="d-flex"><span>+</span>&nbsp;$43,180.13</div> </td>
+                        <td><img style="width: 120px; height: 50px;"  src="images/kriptoicons/green.png"></td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/solana.png"> &nbsp;Solana</div></td>
+                      <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span>&nbsp;$43,180.13</div> </td>
+                      <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/ether.png"> &nbsp;Ethereum</div></td>
+                      <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span>&nbsp;$43,180.13</div> </td>
+                      <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                    </tr>
+                    <tr>
+                      <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/dogecoin.png"> &nbsp;Dogecoin&nbsp;&nbsp;&nbsp;&nbsp;</div></td>
+                      <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span>&nbsp;$43,180.13</div> </td>
+                      <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+            <div class="col-xxl-4 col-xl-6 col-lg-12 columntwo" style="width: 400px;overflow: hidden; ">
+              <div style="position: relative;" class="d-flex">
+                <p  class="h7 emojiyazi">🚀  Top Gainers ↓</p> 
+                <p style="position: absolute;color: #2F7CF0;font-size: smaller;padding-top: 10px; right: 0px;"  >More ></p>
+              </div>
+              <table  class="table">
+                <thead>
+                  <tr>
+                      <th>Name</th>
+                      <th class="price" >Price</th>
+                      <th class="chart">Chart</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/pappay.png"> &nbsp;PAPPAY</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/assia.png"> &nbsp;Bitcoin&nbsp;Asia</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/moonrock.png"> &nbsp;MoonRock</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/ninja.png"> &nbsp;NinjaFloki</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class=" col-xxl-4 col-lg-12 columnthree" style="width: 400px;overflow: hidden; ">
+              <div style="position: relative;" class="d-flex">
+                <p class="emojiyazi" class="h7">💎  Recently Added</p> 
+                <p style="position: absolute;color: #2F7CF0;font-size: smaller;padding-top: 10px; right: 0px;" >More ></p>
+              </div>
+              <table  class="table">
+                  <tr>
+                      <th>Name</th>
+                      <th class="price" >Price</th>
+                      <th class="chart" >Chart</th>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/metacraft.png"> &nbsp;Metacraft</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/frog.png"> &nbsp;Frog</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/muskdoge.png"> &nbsp;Musk Doge</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+                  <tr>
+                    <td style="padding-top: 20px;"><div class="d-flex"> <img style="width: 25px;" src="images/kriptoicons/2share.png"> &nbsp;2SHARE</div></td>
+                    <td style="padding-top: 20px;"><div class="d-flex"><span>+ </span> &nbsp;$43,180.13</div> </td>
+                    <td><img style="width: 120px;height: 50px;"  src="images/kriptoicons/green.png"></td>
+                  </tr>
+              </table>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="inputselect" style="margin-top: 105px;">
+        <div class="container justify-content-center">
+          <div class="row justify-content-center align-items-center text-center">
+          <div class="col-xxl-6 order-xxl-1 order-2 align-self-center " style="width: 500px;">
+              <p class="h1 text-start">Buy & trade on the
+                original crypto exchange.</p>
+                
+              <p class="text-start" style=" margin-top: 60px;">Buy now and get 40% extra bonus Minimum pre-sale amount 25 Crypto Coin. We accept BTC crypto-currency</p>  
+       <div class="input-group mb-3 position:relative;">
+              <p style="position: absolute; top: 28px;left: 20px; z-index: 1;  font-size: 12px;background: -webkit-linear-gradient(#0CD3FF, #0E65E8);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Amount</p>
+              <div style="position: absolute; top: 17px;left: 80px; z-index: 1; height: 40px;   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(45deg,#468EF9 ,#0C66EE) border-box;border: 1px solid transparent;"></div>
+              <input type="text"  value="5,000" style="margin-right: 10px; z-index: 0;text-align:right; height: 75px;
+                background: linear-gradient(#fff, #fff) padding-box,linear-gradient(45deg,   #0CD3FF , #0E65E8) border-box;border: 2px solid transparent;border-radius: 30px;" onkeypress="return isNumberKey(event)" class="form-control">
+            
+            <div onclick="clickmenutlshow('btn')" class=" d-flex align-items-center justify-content-center" style="cursor: pointer; height: 75px; width: 150px;
+                background: linear-gradient(#fff, #fff) padding-box,linear-gradient(45deg,   #0CD3FF , #0E65E8) border-box;border: 2px solid transparent;border-radius: 30px;">
+      
+                <div class="changetl">
+                  <img style="width:35px;" src="images/kriptoicons/turkey.png">&nbsp;&nbsp;TL&nbsp;&nbsp;
+                </div>
+                <div class="changeusa">
+                  <img style="width:35px;" src="images/kriptoicons/united-states-of-america.png">&nbsp;&nbsp;USA&nbsp;&nbsp;
+                </div>
+                <div class="changerub">
+                  <img  style="width:35px;" src="images/kriptoicons/russia.png">&nbsp;&nbsp;RUB&nbsp;&nbsp;
+                </div>
+                <p  style="padding-top: 15px;padding-left: 19px;">↓</p>    
+            </div>
+      
+            <div  class="menutl">
+             <div style="cursor: pointer; position: absolute;z-index:1;left: 360px; top: 60px; background-color: #bec6cf;border-radius: 15px;">
+              <div onclick="clicktlchange('tl')" class="tl" style="padding: 10px;">
+                <img  style="margin-left: -20px; width:25px;" src="images/kriptoicons/turkey.png">&nbsp;&nbsp;TL
+              </div>
+              <div onclick="clicktlchange('usa')"  class="tl" style="padding: 10px;">
+                <img style="width:25px;" src="images/kriptoicons/united-states-of-america.png">&nbsp;&nbsp;USA&nbsp;&nbsp;
+              </div>
+              <div onclick="clicktlchange('rub')"  class="tl" style="padding: 10px;">
+                <img style="width:25px;" src="images/kriptoicons/russia.png">&nbsp;&nbsp;RUB&nbsp;&nbsp;
+              </div>
+            </div>
+          </div>
+      </div>
+      
+          
+      <div  class="input-group mb-3 position:relative;">
+        <p style="position: absolute; top: 28px;left: 20px; z-index: 1;  font-size: 12px;background: -webkit-linear-gradient(#0CD3FF, #0E65E8);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Get</p>
+        <div style="position: absolute; top: 17px;left: 80px; z-index: 1; height: 40px;   background: linear-gradient(#fff, #fff) padding-box, linear-gradient(45deg,#468EF9 ,#0C66EE) border-box;border: 1px solid transparent;"></div>
+        <input type="text"  value="0.10901" style="margin-right: 10px;z-index: 0;text-align:right; height: 75px;
+          background: linear-gradient(#fff, #fff) padding-box,linear-gradient(45deg,   #0CD3FF , #0E65E8) border-box;border: 2px solid transparent;border-radius: 30px;" onkeypress="return isNumberKey(event)" class="form-control" id="exampleFormControlInput1">
+      
+      <div onclick="clickmenubitcoinshow()" class="d-flex align-items-center justify-content-center" style="cursor: pointer; height: 75px; width: 150px;
+      background: linear-gradient(#fff, #fff) padding-box,linear-gradient(45deg,   #0CD3FF , #0E65E8) border-box;border: 2px solid transparent;border-radius: 30px;">
+      
+      <div class="changebtc">
+        <img style="width:35px;" src="images/kriptoicons/bitcoin.png">&nbsp;BTC 
+      </div>
+      <div class="changeeth">
+        <img style="width:35px;" src="images/kriptoicons/ether.png">&nbsp;ETH 
+      </div>
+      <div class="changesol">
+        <img style="width:35px;" src="images/kriptoicons/solana.png">&nbsp;SOL 
+      </div>
+      <div class="changedco">
+        <img style="width:35px;" src="images/kriptoicons/dogecoin.png">&nbsp;DCO 
+      </div>
+      <div class="changepap">
+        <img style="width:35px;" src="images/kriptoicons/pappay.png">&nbsp;PAP 
+      </div>
+      <div class="changebca">
+        <img style="width:35px;" src="images/kriptoicons/assia.png">&nbsp;BCA 
+      </div>
+      <div class="changemr">
+        <img style="width:35px;" src="images/kriptoicons/moonrock.png">&nbsp;MR 
+      </div>
+      <div class="changenf">
+        <img style="width:35px;" src="images/kriptoicons/ninja.png">&nbsp;NF 
+      </div>
+      <div class="changemc">
+        <img style="width:35px;" src="images/kriptoicons/metacraft.png">&nbsp;MC 
+      </div>
+      <div class="changefrg">
+        <img style="width:35px;" src="images/kriptoicons/frog.png">&nbsp;FRG 
+      </div>
+      <div class="changemd">
+        <img style="width:35px;" src="images/kriptoicons/muskdoge.png">&nbsp;MD 
+      </div>
+      <div class="change2s">
+        <img style="width:35px;" src="images/kriptoicons/2share.png">&nbsp;2S 
+      </div>
+      <p style="padding-top: 15px;padding-left: 19px;">↓</p>    
+      </div>
+      
+      <div  class="menubitcoin">
+        <div style="cursor: pointer; overflow-y: scroll;overflow-x:hidden;height: 200px;width: 108px; position: absolute;z-index:1;left: 360px; top: 60px; background-color: #bec6cf;border-radius: 15px;">
+          <div onclick="clickbitcoinchange('btc')" class="tl" style="padding: 10px;">
+            <img  style=" width:25px;" src="images/kriptoicons/bitcoin.png">&nbsp;&nbsp;BTC
+          </div>
+          <div onclick="clickbitcoinchange('eth')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/ether.png">&nbsp;&nbsp;ETH&nbsp;&nbsp;
+          </div>
+          <div onclick="clickbitcoinchange('sol')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/solana.png">&nbsp;&nbsp;SOL&nbsp;&nbsp;
+          </div>
+          <div onclick="clickbitcoinchange('dco')" class="tl" style="padding: 10px;">
+            <img  style=" width:25px;" src="images/kriptoicons/dogecoin.png">&nbsp;&nbsp;DCO
+          </div>
+          <div onclick="clickbitcoinchange('pap')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/pappay.png">&nbsp;&nbsp;PAP&nbsp;&nbsp;
+          </div>
+          <div onclick="clickbitcoinchange('bca')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/assia.png">&nbsp;&nbsp;BCA&nbsp;&nbsp;
+          </div>
+          <div onclick="clickbitcoinchange('mr')" class="tl" style="padding: 10px;">
+            <img  style=" width:25px;" src="images/kriptoicons/moonrock.png">&nbsp;&nbsp;MR
+          </div>
+          <div onclick="clickbitcoinchange('nf')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/ninja.png">&nbsp;&nbsp;NF&nbsp;&nbsp;
+          </div>
+          <div onclick="clickbitcoinchange('mc')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/metacraft.png">&nbsp;&nbsp;MC&nbsp;&nbsp;
+          </div>
+          <div onclick="clickbitcoinchange('frg')" class="tl" style="padding: 10px;">
+            <img  style=" width:25px;" src="images/kriptoicons/frog.png">&nbsp;&nbsp;FRG
+          </div>
+          <div onclick="clickbitcoinchange('md')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/muskdoge.png">&nbsp;&nbsp;MD&nbsp;&nbsp;
+          </div>
+          <div onclick="clickbitcoinchange('2s')" class="tl" style="padding: 10px;">
+            <img style="width:25px;" src="images/kriptoicons/2share.png">&nbsp;&nbsp;2S&nbsp;&nbsp;
+          </div>
+       </div>
+      </div>
+      
+      </div>
+      <button type="button" style="width: 100%; border-radius: 30px;" class="btn btn-primary">Buy Now</button>
+          </div>
+          <div class="col-xxl-6 order-xxl-2 order-1 " style="overflow: hidden;">
+            <img src="images/inputselectimage.png" class="inputselectimage"  class="img-fluid">
+          </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="destekler" style="margin-top: 150px;">
+        <div class="container-fluid destek" style="background-color: #f2f4f7; border-radius: 30px;">
+          <div class="row d-flex align-items-center justify-content-center">
+            <div class="col text-center">
+              <p style="color: #222222; font-size:x-large;">Trusted Partners Worldwide</p>
+              <p style="color: #666666;font-weight: 100;">We're partners with countless major organisations around the globe</p>
+            </div>
+          </div>
+          <div class="row d-flex align-self-center align-items-center justify-content-center">
+            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 d-flex align-self-center align-items-center justify-content-center "> <img class="img-fluid " style="width: 400px;" src="images/clever.png"></div>
+            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 d-flex align-self-center align-items-center justify-content-center "><img class="img-fluid " style="width: 400px;" src="images/diomand.png"></div>
+            <div class="col-xxl-3 col-xl-4 col-lg-6 col-md-12 d-flex align-self-center align-items-center justify-content-center "><img class="img-fluid " style="width: 400px;" src="images/swiss.png"></div>
+            <div class="col-xxl-3 col-lg-6 col-md-12 d-flex align-self-center align-items-center justify-content-center"><img class="img-fluid " style="width: 400px;" src="images/gambio.png"></div>
+          </div>
+        </div>
+      </div>
+    <div class="nefa"  >
+      <div class="container">
+        <div class="row d-flex align-self-center align-items-center justify-content-center">
+          <div   class="crediimage col-xxl-6 col-xl-12  d-flex align-self-center align-items-center justify-content-center">
+            <img class="img-fluid"  src="images/credicard.png">
+          </div>
+          <div  style="margin-top: -200px;" class="col-xxl-6 col-xl-12 text-center d-flex align-self-center align-items-center justify-content-center">
+            <div>
+                <p class="text-start" style="font-size: 40px;margin-top: 200px;">Introducing the <span style="background: -webkit-linear-gradient(#3984F4,#0CD3FF,#2F7CF0,#0E65E8);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;" >NEFA</span> <br> Credit Card</p>
+                <p class="text-start">Subject to cardholder and rewards terms which will be available <br> at application.</p>
+             
+                <div class="text-start"><img  style="width: 20px;height: 30px;"  src="images/icontik.png"><p class="d-inline" style="margin-top: 2px; margin-left: 10px;"> Up to 3% back on purchases</p>  </div>
+                <div class="text-start"> <img  style="width: 20px;height: 30px;" src="images/icontik.png"><p class="d-inline" style="margin-top: 2px; margin-left: 10px;">Earn rewards in bitcoin or any crypto on NEFA</p>  </div>
+                <div class="text-start"><img  style="width: 20px;height: 30px;" src="images/icontik.png"><p class="d-inline" style="margin-top: 2px; margin-left: 10px;">No annual fee</p>  </div>
+                
+                <button type="button" style="border-radius: 25px;padding: 15px;width: 200px; margin-top: 25px;" class="float-start btn btn-outline-primary">Join the waitlist</button>
+            </div>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tools" style="margin: 50px; padding: 50px; background-color: #fafcff; border-radius: 30px;">
+        <div class="container">
+            <div class="row d-flex align-self-center align-items-center justify-content-center">
+                <div  class="col-xxl-6 col-xl-12 order-xxl-2 d-flex align-items-center justify-content-center toolsimg" ><img src="images/tools.png"  class="img-fluid"></div>
+                <div class="col-xxl-6 col-xl-12 order-xxl-1 text-center toolsstr" style="width: 500px;">
+                    <p class="text-start" style="font-size: 40px;">Advanced Trading <span style="  background: -webkit-linear-gradient(#3984F4,#0CD3FF,#2F7CF0,#0E65E8);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Tools</span></p>
+                    <p class="text-start" style="font-weight: bold;">Professional Access, Non-stop Availability</p>
+                    <p class="text-start" style="font-weight: 100;">We provide premium access to crypto trading for both individuals and institutions through high liquidity, reliable order execution and constant uptime.</p>
+                    <p class="text-start" style="font-weight: bold;">A Range of Powerful Apis</p>
+                    <p class="text-start" style="font-weight: 100;">Set up your own trading interface or deploy your algorithmic strategy with our high-performance FIX and HTTP APIs. Connect to our WebSocket for real-time data streaming.</p>
+                    <p class="text-start" style="font-weight: bold;">Customer Support</p>
+                    <p class="text-start" style="font-weight: 100;">Premium 24/7 support available to all customers worldwide by phone or email. Dedicated account managers for partners.</p>
+                    
+                        <button type="button" style="float: left; width: 200px; padding: 8px;height: 60px;border-radius: 30px;" class="btn btn-outline-primary">Get Started</button>
+                        <p style="float: left;color: #0d6efd;text-decoration: underline; margin-left: 30px;margin-top: 15px;" class="learnmore">Learn More</p>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="kasa">
+      <div class="container">
+        <div class="row d-flex align-self-center align-items-center justify-content-center">
+          <div class="col-xxl-6 col-12 d-flex align-self-center align-items-center justify-content-center">
+              <img src="images/kasa.png" class="img-fluid">
+          </div>
+          <div  class="col-xxl-6 col-12 d-flex align-self-center align-items-center justify-content-center">
+            <div style="width: 600px;">
+              <p style="font-size: 50px;">Industry-leading security from day one</p>
+
+              <img style="float: left;width: 20px;height: 30px;" src="images/icontik.png"> <p style="font-weight: bold; padding-top: 3px;">Safety, security and compliance</p><br>
+              <p style="font-weight: 100;">NEFA is a licensed New York trust company that undergoes regular bank exams and is subject to the cybersecurity audits conducted by the New York Department of Financial Services. Learn more about our commitment to security.</p>
+              <img style="float: left;width: 20px;height: 30px;" src="images/icontik.png"> <p style="font-weight: bold; padding-top: 3px;">Hardware security keys</p><br>
+              <p style="font-weight: 100;">With NEFA you can secure your account with a hardware security key via WebAuthn.</p>
+              <img style="float: left;width: 20px;height: 30px;" src="images/icontik.png"> <p style="font-weight: bold; padding-top: 3px;">SOC Certifications</p><br>
+              <p style="font-weight: 100;">NEFA is SOC 1 Type 2 and SOC 2 Type 2 compliant. We are the world’s first cryptocurrency exchange and custodian to complete these exams.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="threeimage" style="padding-top: 50px;padding-bottom: 50px; margin: 20px; background-color: #f5f6f9;border-radius: 35px;">
+      <div class="container">
+        <div class="row "> 
+          <div class="col d-flex align-items-center align-self-center justify-content-center">    
+           <p class="h3">Get started in just a few minutes</p> 
+          </div>
+          </div>
+          <img class="ok1" src="images/okimage.png">
+          <img class="ok2" src="images/okimage.png">
+        <div class="row align-items-center align-self-center justify-content-center"  >
+          <div class="col-xxl-4 col-xl-6 col-12" style="width: 400px;margin-right: 50px;" >
+            <img src="images/1in3.png"   class="img-fluid">
+            <p class="text-center">Sign Up</p>
+            <p style=" align-items: center;color: #666666;" class="d-flex text-center">Buy Bitcoin or Ethereum, then securely store it in your Wallet or send it on easily to friends</p>
+          </div>
+          <div class="col-xxl-4 col-xl-6 col-12" style="width: 400px;margin-right: 50px;">
+            <img src="images/2in3.png"  class="img-fluid">
+            <p class="text-center">Fund</p>
+            <p style=" align-items: center;color: #666666;" class="text-center">Choose your preferred payment method such as bank transfer or credit card to top up your NEFA Wallet</p>
+
+          </div>
+          <div class="col-xxl-4 col-12  align-items-center align-self-center justify-content-center" style="width: 400px;">
+            <img src="images/3in3.png" class="img-fluid ">
+            <p class="text-center">Buy Crypto</p>
+            <p style=" align-items: center;color: #666666;" class="text-center">Sign up for your free NEFA Wallet on web, iOS or Android and follow our easy process to set up your profile</p>
+
+          </div>
+        </div>  
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="container">
+        <div class="row">
+          <div class="col"> 
+            <img src="images/accordion.png" class="img-fluid">
+          </div>
+          <div class="col">
+            <p style="background: -webkit-linear-gradient(#468EF9, #0C66EE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;">SUPPORT</p>
+            <p class="h2">Frequently asked questions</p>
+            <p style="font-weight: 100;">Why should I choose NEFA?</p>
+            <p style="font-weight: 100;">We're industry pioneers, having been in the cryptocurrency industry since 2016. We've facilitated more than 21 billion USD worth of transactions on our exchange for customers in over 40 countries. Today, we're trusted by over 8 million customers around the world and have received praise for our easy-to-use app, secure wallet, and range of features.</p>
+            <div class="d-flex" style="width: 500px;  border: #dee2e6 0.5px; border-style:solid;">
+            </div>
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    How secure is NEFA?
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Do I have to buy a whole Bitcoin?
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    How do I actually buy Bitcoin?
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex" style="width: 500px;  border: #dee2e6 0.5px; border-style:solid;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex align-self-center justify-content-center align-items-center">
+      <button type="button" class="btn ">Back to top <img style="width: 20px;" src="images/yukariok.png"></button>
+    </div>
+
+    <div style="border-bottom: #eeeeee 0.5px solid;border-top: #eeeeee 0.5px solid; ">
+      <div class="container">
+        <div class="row d-flex align-items-center justify-content-start d-flex align-items-center justify-content-center">
+          <div class="col-xxl-2 col-xl-3 col-lg-4 d-flex align-items-center justify-content-center">
+                <img style="width: 200px;" src="images/navbar.png">
+          </div>
+          <div class="col-xxl-2 col-xl-3 col-lg-4 text-start d-flex align-items-center justify-content-center" style="border-right: #eeeeee 0.5px solid; font-weight: 200; font-size: 13px; ">
+               <div>
+                <p>Buy Crypto</p>
+                <p>Exchanges</p>
+                <p>Watchlist</p>
+                <p>Portfolio</p>
+                <p>NFT</p>
+              </div>
+          </div>
+          <div class="col-xxl-2 col-xl-3 col-lg-4 text-start d-flex align-items-center justify-content-center"  style="border-right: #eeeeee 0.5px solid; font-weight: 200; font-size: 13px;  ">
+            <div>
+            <p>Products</p>
+            <p>Abous Us</p>
+            <p>Careers</p>
+            <p>Blog</p>
+            <p>Security</p>
+          </div>
+          </div>
+          <div class="col-xxl-2 col-xl-3 col-lg-4 text-start d-flex align-items-center justify-content-center"  style="border-right: #eeeeee 0.5px solid;  font-weight: 200; font-size: 13px; ">
+            <div>
+            <p>Help Center</p>
+            <p>Contact Us</p>
+            <p>System Status</p>
+            <p>Area of Avaibility</p>
+            <p>Privacy Policy</p>
+          </div>
+          </div>
+          <div class="col-xxl-4 d-flex text-start align-items-center justify-content-center" style="width: 300px; font-weight: 200; font-size: 13px; ">
+            <div>
+            <p>Newsletter</p>
+            <p>Never miss anything crypto when you're on the go</p>
+            <div class="form-floating modalinput mb-3 d-flex">
+              <input type="text"  autocomplete="off" class="form-control" id="exampleFormControlInput1"  placeholder="Enter Your email">
+              <label for="exampleFormControlInput12" class="form-label">Enter Your email</label>
+              <button type="button" style="border-radius: 25px;margin-left: 10px;" class="btn btn-primary"><img src="images/sagok.png"></button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="position: relative; bottom: 10px; border: #dddddd 0.5px solid; width: 100%;"></div>
+    <div  class="text-center">© Copyright 2024 Muhammed Tahir SIRADAĞ. <span style="font-weight: 100;">All rights reserved</span> </div>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <script>
+        function isNumberKey(evt) {
+          var charCode = (evt.which) ? evt.which : event.keyCode;
+          if (charCode > 31 && (charCode < 48 || charCode > 57))
+              return false;
+          return true;
+      }
+      function clickmenutlshow(){
+        var element = document.querySelector('.menutl');
+      var con = element.computedStyleMap().get('display');
+      
+          if (con == "block"){
+          document.querySelector('.menutl').setAttribute('style','display:none;');
+        }
+        if (con == "none"){
+          document.querySelector('.menutl').setAttribute('style','display:block;');
+        }
+        } 
+      
+      function clickmenubitcoinshow(){
+        var element = document.querySelector('.menubitcoin');
+      var con = element.computedStyleMap().get('display');
+      
+          if (con == "block"){
+          document.querySelector('.menubitcoin').setAttribute('style','display:none;');
+        }
+        if (con == "none"){
+          document.querySelector('.menubitcoin').setAttribute('style','display:block;');
+        }
+      
+      }
+      
+      function clicktlchange(tur){
+        if (tur=="tl"){
+          document.querySelector('.changetl').setAttribute('style','display:block;');
+          document.querySelector('.changerub').setAttribute('style','display:none;');
+          document.querySelector('.changeusa').setAttribute('style','display:none;');
+          document.querySelector('.menutl').setAttribute('style','display:none;');
+        }
+        if (tur=="usa"){
+          document.querySelector('.changetl').setAttribute('style','display:none;');
+          document.querySelector('.changerub').setAttribute('style','display:none;');
+          document.querySelector('.changeusa').setAttribute('style','display:block;');
+          document.querySelector('.menutl').setAttribute('style','display:none;');
+        }
+        if (tur=="rub"){
+          document.querySelector('.changetl').setAttribute('style','display:none;');
+          document.querySelector('.changerub').setAttribute('style','display:block;');
+          document.querySelector('.changeusa').setAttribute('style','display:none;');
+          document.querySelector('.menutl').setAttribute('style','display:none;');
+        }
+      
+      }
+      
+      function clickbitcoinchange(tur){
+        document.querySelector('.changebtc').setAttribute('style','display:none;');
+        document.querySelector('.changeeth').setAttribute('style','display:none;');
+        document.querySelector('.changesol').setAttribute('style','display:none;');
+        document.querySelector('.changedco').setAttribute('style','display:none;');
+        document.querySelector('.changepap').setAttribute('style','display:none;');
+        document.querySelector('.changebca').setAttribute('style','display:none;');
+        document.querySelector('.changemr').setAttribute('style','display:none;');
+        document.querySelector('.changenf').setAttribute('style','display:none;');
+        document.querySelector('.changemc').setAttribute('style','display:none;');
+        document.querySelector('.changefrg').setAttribute('style','display:none;');
+        document.querySelector('.changemd').setAttribute('style','display:none;');
+        document.querySelector('.change2s').setAttribute('style','display:none;');
+        if (tur=="btc"){
+          document.querySelector('.changebtc').setAttribute('style','display:block;');
+        }
+        if (tur=="eth"){
+          document.querySelector('.changeeth').setAttribute('style','display:block;');
+        }
+        if (tur=="sol"){
+          document.querySelector('.changesol').setAttribute('style','display:block;');
+        }
+        if (tur=="dco"){
+          document.querySelector('.changedco').setAttribute('style','display:block;');
+        }
+        if (tur=="pap"){
+          document.querySelector('.changepap').setAttribute('style','display:block;');
+        }
+        if (tur=="bca"){
+          document.querySelector('.changebca').setAttribute('style','display:block;');
+        }
+        if (tur=="mr"){
+          document.querySelector('.changemr').setAttribute('style','display:block;');
+        }
+        if (tur=="nf"){
+          document.querySelector('.changenf').setAttribute('style','display:block;');
+        }
+        if (tur=="mc"){
+          document.querySelector('.changemc').setAttribute('style','display:block;');
+        }
+        if (tur=="frg"){
+          document.querySelector('.changefrg').setAttribute('style','display:block;');
+        }
+        if (tur=="md"){
+          document.querySelector('.changemd').setAttribute('style','display:block;');
+        }
+        if (tur=="2s"){
+          document.querySelector('.change2s').setAttribute('style','display:block;');
+        }
+        document.querySelector('.menubitcoin').setAttribute('style','display:none;');
+      
+      }
+      function loadform(){
+        document.querySelector('.menutl').setAttribute('style','display:none;');
+        document.querySelector('.menubitcoin').setAttribute('style','display:none;');
+      
+        document.querySelector('.changeusa').setAttribute('style','display:none;');
+        document.querySelector('.changerub').setAttribute('style','display:none;');
+      
+        
+        document.querySelector('.changeeth').setAttribute('style','display:none;');
+        document.querySelector('.changesol').setAttribute('style','display:none;');
+        document.querySelector('.changedco').setAttribute('style','display:none;');
+        document.querySelector('.changepap').setAttribute('style','display:none;');
+        document.querySelector('.changebca').setAttribute('style','display:none;');
+        document.querySelector('.changemr').setAttribute('style','display:none;');
+        document.querySelector('.changenf').setAttribute('style','display:none;');
+        document.querySelector('.changemc').setAttribute('style','display:none;');
+        document.querySelector('.changefrg').setAttribute('style','display:none;');
+        document.querySelector('.changemd').setAttribute('style','display:none;');
+        document.querySelector('.change2s').setAttribute('style','display:none;');
+      
+      }
+      
+      
+      
+      </script>
+</body>
+</html>
